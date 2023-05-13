@@ -1,6 +1,6 @@
 import ThemesContext from '../../contexts/ThemesContext'
 import { ThemeContext } from '../../interfaces/theme'
-import { Buttontheme } from './style'
+import { Buttontheme } from './styles'
 import { useContext } from 'react'
 
 const ButtonTheme = () => {

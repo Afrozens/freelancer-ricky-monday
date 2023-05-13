@@ -1,12 +1,11 @@
+import ThemesContext from '../../contexts/ThemesContext'
+import { ThemeContext } from '../../interfaces/theme'
 import { Buttontheme } from './style'
-import { ReactNode } from 'react'
+import { useContext } from 'react'
 
-type PropsButton = {
-  children: ReactNode
-}
-
-const ButtonTheme = ({ children }: PropsButton) => {
-  return <Buttontheme>{children}</Buttontheme>
+const ButtonTheme = () => {
+  const { isToggle, handleToggle } = useContext<ThemeContext>(ThemesContext)
+  return <Buttontheme onClick={handleToggle}>{isToggle ? '🌙'  : '🌤️'}</Buttontheme>
 }
 
 export default ButtonTheme

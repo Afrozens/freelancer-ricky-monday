@@ -3,7 +3,7 @@ import { Homepage } from './styles'
 
 const HomePage = () => {
   return <Homepage>
-    <ButtonTheme>🌙</ButtonTheme>
+    <ButtonTheme />
     <h2>Hola</h2>
   </Homepage>
 }

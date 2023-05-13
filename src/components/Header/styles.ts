@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import { Theme } from '../../interfaces/theme'
 
 export const Header = styled.header`
   display: flex;
@@ -9,5 +10,5 @@ export const Header = styled.header`
   position: absolute;
   left: 23px;
   top: 739px;
-  background: #ffffff;
+  background: ${({theme}: Theme) => theme?.backgroundInputs};
 `

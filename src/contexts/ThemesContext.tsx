@@ -1,8 +1,7 @@
 import { useState, createContext } from 'react'
-import { ThemeContext } from '../interfaces/theme'
+import { ThemeContext, PropsProvider, initialState } from '../interfaces'
 import { ThemeProvider, Global, css } from '@emotion/react'
 import { darkTheme, lightTheme } from '../theme/theme'
-import { PropsProvider, initialState } from '../interfaces/context'
 
 const ThemesContext = createContext<ThemeContext>(initialState)
 

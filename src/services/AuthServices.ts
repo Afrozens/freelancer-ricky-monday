@@ -4,7 +4,7 @@ import {
   signInWithEmailAndPassword,
   sendPasswordResetEmail,
 } from 'firebase/auth'
-import { DataAuth } from '../interfaces/auth'
+import { DataAuth } from '../interfaces'
 import { auth } from './firebase'
 
 export function signUp({ email, password }: DataAuth): Promise<UserCredential> {

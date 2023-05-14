@@ -1,8 +1,7 @@
 import { useEffect, useState, useContext, createContext } from 'react'
 import { auth } from '../services/firebase'
 import { User, signOut } from 'firebase/auth'
-import { AuthContextModel, AuthProviderProps, UserContextState } from '../interfaces/auth'
-import { initialState } from '../interfaces/context'
+import { AuthContextModel, AuthProviderProps, UserContextState, initialState } from '../interfaces'
 
 export const UserStateContext = createContext(initialState as UserContextState)
 

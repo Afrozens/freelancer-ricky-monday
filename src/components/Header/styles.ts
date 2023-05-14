@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { ThemeObject } from '../../interfaces/theme'
+import { ThemeObject } from '../../interfaces'
 import { NavLink } from 'react-router-dom'
 import { RiHomeFill } from 'react-icons/ri'
 import { RxExit } from 'react-icons/rx'

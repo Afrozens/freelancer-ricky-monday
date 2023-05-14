@@ -1,5 +1,5 @@
 import { ButtonAuth } from '../../components'
-import { DataAuth } from '../../interfaces/auth'
+import { DataAuth } from '../../interfaces'
 import { signIn } from '../../services/AuthServices'
 import {
   Loginpage,

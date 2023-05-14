@@ -1,4 +1,4 @@
-import { Theme } from '../interfaces/theme'
+import { Theme } from '../interfaces'
 
 export const lightTheme: Theme = {
   background: '#F3F3F3',

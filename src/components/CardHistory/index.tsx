@@ -1,9 +1,14 @@
-import { CardTitleHistory, ContainerHistory } from './style'
+import { DbData } from '../../interfaces'
+import { CardCrossIcon, CardHeartIcon, CardPreviewCard, CardTitleHistory, ContainerHistory } from './style'
 
-const CardHistory = () => {
+type PropsCard = Pick<DbData, 'image' | 'isLike' | 'name'>
+
+const CardHistory = ({ image, isLike, name }: PropsCard) => {
   return (
     <ContainerHistory>
-      <CardTitleHistory>Soccer</CardTitleHistory>
+      <CardPreviewCard src={image} alt={name} />
+      <CardTitleHistory>{name}</CardTitleHistory>
+      {isLike ? <CardHeartIcon /> : <CardCrossIcon />}
     </ContainerHistory>
   )
 }

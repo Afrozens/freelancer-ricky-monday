@@ -1,19 +1,18 @@
-import { useState } from 'react'
 import { ButtonTheme, PreviewImg } from '../../components'
 import { useData } from '../../contexts/ApiDataContext'
 import { saveInLocalStorage } from '../../utils'
 import { Buttoncross, Buttonlike, CrossIcon, Homepage } from './styles'
 import { DbData } from '../../interfaces'
 import { useAuth } from '../../contexts/AuthContext'
+import { sendData } from '../../services'
 
 const HomePage = () => {
-  const [dbData, setDbData] = useState<DbData | null>(null)
 
   const { user } = useAuth()
   const { dataApi, figure, setFigure } = useData()
   const { image, name } = dataApi
 
-  const handleInteractivity = (isLike: boolean) => {
+  const handleInteractivity = async (isLike: boolean) => {
     const adittion = figure + 1
     setFigure(adittion)
     saveInLocalStorage('figure', adittion)
@@ -24,11 +23,12 @@ const HomePage = () => {
       isLike: isLike,
       uid: user?.uid as string,
     }
-    setDbData(data)
 
-    console.log(dbData)
+    if (data) {
+      await sendData(data)
+    }
   }
-  
+
   return (
     <Homepage>
       <ButtonTheme />

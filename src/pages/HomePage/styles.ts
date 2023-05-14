@@ -14,7 +14,7 @@ export const Homepage = styled.main`
 
 export const Buttoncross = styled.button`
   position: absolute;
-  display: flex; 
+  display: flex;
   justify-content: center;
   align-items: center;
   padding: 15px;
@@ -34,8 +34,8 @@ export const Buttoncross = styled.button`
 `
 
 export const CrossIcon = styled(RxCross2)`
-width: 24px;
-height: 24px;
+  width: 24px;
+  height: 24px;
   color: ${({ theme }: ThemeObject) => theme?.colorIconCross};
 `
 

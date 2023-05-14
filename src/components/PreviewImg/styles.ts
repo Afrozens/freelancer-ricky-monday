@@ -14,6 +14,7 @@ export const PreviewContainer = styled.div`
 export const Previewimg = styled.img`
   border: 0;
   border-radius: 0px 0px 32px 32px;
+  object-fit: cover;
 `
 
 export const PreviewTitle = styled.h2`

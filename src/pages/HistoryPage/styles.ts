@@ -5,7 +5,8 @@ import { HiOutlineArrowLeft } from 'react-icons/hi'
 export const Historypage = styled.main`
   display: flex;
   padding: 22px;
-  flex-direccion: column;
+  flex-direction: column;
+  items
   width: 100%;
   height: 100vh;
   overflow: hidden;
@@ -15,19 +16,20 @@ export const Historypage = styled.main`
 export const IconLeft = styled(HiOutlineArrowLeft)`
   with: 30px;
   height: 30px;
-  position: absolute;
-  left: 32px;
-  top: 54px;
+  scale: 150%;
+  margin: 14px 0;
+  transition: all .3s ease-in-out;
   color: ${({ theme }: ThemeObject) => theme?.textColor};
+
+  &:active {
+    scale: 130%
+  }
 `
 
 export const TitleHistory = styled.h2`
-  position: absolute;
   width: 133px;
   height: 51px;
-  left: 32px;
-  top: 102px;
-
+  margin-bottom: 14px;
   font-family: 'DM Sans';
   font-style: normal;
   font-weight: 700;
@@ -40,11 +42,9 @@ export const TitleHistory = styled.h2`
 `
 
 export const SubtitleHistory = styled.h4`
-  position: absolute;
   width: 325px;
   height: 54px;
-  left: 32px;
-  top: 161px;
+  margin-bottom: 14px;
   color: ${({ theme }: ThemeObject) => theme?.textColorSecundary};
   font-family: 'Epilogue';
   font-style: normal;
@@ -58,4 +58,9 @@ export const SubtitleHistory = styled.h4`
   color: ${({ theme }: ThemeObject) => theme?.textColor};
 
   opacity: 0.8;
+`
+
+export const ContainerCardsHistory = styled.div`
+  overflow-y: auto;
+  height: 550px;
 `

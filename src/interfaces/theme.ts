@@ -10,7 +10,7 @@ export interface Theme {
     textColorSecundary: string
     colorHearth: string,
     colorIconHome: string,
-    colorIconCross: string
+    colorIconCross: string,
 }
 
 export interface ThemeObject {

@@ -4,6 +4,7 @@ import { ReactNode } from 'react'
 export interface DataAuth {
   email: string
   password: string
+  confirmPassword?: string
 }
 
 export interface AuthProviderProps {

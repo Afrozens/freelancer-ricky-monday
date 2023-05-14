@@ -1,6 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom'
 import { Header } from '../components'
-import { Error404, HistoryPage, HomePage, LoginPage } from '../pages'
+import { Error404, HistoryPage, HomePage, LoginPage, RegisterPage } from '../pages'
 
 
 const router = createBrowserRouter([
@@ -20,6 +20,10 @@ const router = createBrowserRouter([
       {
         path: '/history',
         element: <HistoryPage />,
+      },
+      {
+        path: '/register',
+        element: <RegisterPage />,
       },
     ],
   },

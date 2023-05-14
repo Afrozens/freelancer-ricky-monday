@@ -1,7 +1,8 @@
 import styled from '@emotion/styled'
 import { ThemeObject } from '../../interfaces/theme'
+import { Link } from 'react-router-dom'
 
-export const Loginpage = styled.section`
+export const Authpage = styled.section`
   display: flex;
   flex-direction: column;
   padding: 22px;
@@ -94,8 +95,6 @@ export const SubTitleLogin = styled.h3`
 `
 
 export const TitlePassword = styled.span`
-  width: 168px;
-  height: 20px;
   margin: 10px 0 18px 0;
   font-family: 'DM Sans';
   font-style: normal;
@@ -122,7 +121,6 @@ export const LabelEmail = styled.label`
 `
 
 export const LabelPassword = styled.label`
-  width: 65px;
   height: 17px;
 
   font-family: 'DM Sans';
@@ -133,6 +131,18 @@ export const LabelPassword = styled.label`
   color: ${({ theme }: ThemeObject) => theme?.textColor};
   display: flex;
   opacity: 0.6;
+`
+
+export const LabelSign = styled(Link)`
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 17px;
+  color: ${({ theme }: ThemeObject) => theme?.colorIconHome};
+  display: flex;
+  opacity: 0.6;
+  margin-bottom: 16px;
 `
 
 export const ErrorMsg = styled.p`

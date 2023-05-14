@@ -1,8 +1,7 @@
-import { ButtonAuth } from '../../components'
-import { DataAuth } from '../../interfaces'
-import { signIn } from '../../services/AuthServices'
+import { ButtonAuth } from '../../../components'
+import { DataAuth } from '../../../interfaces'
 import {
-  Loginpage,
+  Authpage,
   InputEmail,
   InputPass,
   TitleLogin,
@@ -12,13 +11,15 @@ import {
   LabelEmail,
   LabelPassword,
   ErrorMsg,
-} from './styles'
+  LabelSign,
+} from '../styles'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
-import { useAuth } from '../../contexts/AuthContext'
+import { useAuth } from '../../../contexts/AuthContext'
+import { signUp } from '../../../services'
 
-const LoginPage = () => {
+const RegisterPage = () => {
   const navigate = useNavigate()
   const { user } = useAuth()
 
@@ -31,12 +32,15 @@ const LoginPage = () => {
   const {
     register,
     handleSubmit,
+    getValues,
     formState: { errors },
   } = useForm<DataAuth>()
 
   const onSubmit = async (data: DataAuth) => {
+    const { email, password } = data
+
     try {
-      await signIn(data)
+      await signUp({ email, password })
       navigate('/')
     } catch (error: unknown) {
       let errorMessage = 'error.unknown'
@@ -50,9 +54,10 @@ const LoginPage = () => {
   }
 
   return (
-    <Loginpage>
+    <Authpage>
       <TitleLogin>Welcome</TitleLogin>
       <SubTitleLogin>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </SubTitleLogin>
+
       <form onSubmit={handleSubmit(onSubmit)}>
         <ContainerInputs>
           <LabelEmail htmlFor='email'>User</LabelEmail>
@@ -84,12 +89,32 @@ const LoginPage = () => {
           />
 
           {errors.password && <ErrorMsg>{errors.password?.message}</ErrorMsg>}
+
+          <LabelPassword htmlFor='confirmPassword'>Confirm Password</LabelPassword>
+          <InputPass
+            type='password'
+            placeholder='your password again'
+            {...register('confirmPassword', {
+              required: 'Confirm password is required.',
+              minLength: {
+                value: 6,
+                message: 'Password should be at-least 6 characters.',
+              },
+              validate: (value) => {
+                const { password } = getValues()
+                if (password !== value) return 'Your password does not match'
+              },
+            })}
+          />
+
+          {errors.confirmPassword && <ErrorMsg>{errors.confirmPassword?.message}</ErrorMsg>}
         </ContainerInputs>
-        <TitlePassword>Forgot your password?</TitlePassword>
-        <ButtonAuth>Login</ButtonAuth>
+        <TitlePassword>Do you want to register or...</TitlePassword>
+        <LabelSign to='/login'>SignIn</LabelSign>
+        <ButtonAuth>Register</ButtonAuth>
       </form>
-    </Loginpage>
+    </Authpage>
   )
 }
 
-export default LoginPage
+export default RegisterPage

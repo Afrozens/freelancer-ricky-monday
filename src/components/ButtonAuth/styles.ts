@@ -7,7 +7,6 @@ export const Buttonauth = styled.button`
   align-items: center;
   padding: 22px 38px;
   gap: 10px;
-  margin-left: 18px;
   width: 122px;
   height: 66px;
   border: 0;

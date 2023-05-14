@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import { ThemeObject } from '../../interfaces/theme'
+import { HiOutlineArrowLeft } from 'react-icons/hi'
 
 export const Historypage = styled.main`
   display: flex;
@@ -9,6 +10,15 @@ export const Historypage = styled.main`
   height: 100vh;
   overflow: hidden;
   background-color: ${({ theme }: ThemeObject) => theme?.background};
+`
+
+export const IconLeft = styled(HiOutlineArrowLeft)`
+  with: 30px;
+  height: 30px;
+  position: absolute;
+  left: 32px;
+  top: 54px;
+  color: ${({ theme }: ThemeObject) => theme?.textColor};
 `
 
 export const TitleHistory = styled.h2`
@@ -30,22 +40,22 @@ export const TitleHistory = styled.h2`
 `
 
 export const SubtitleHistory = styled.h4`
-position: absolute;
-width: 325px;
-height: 54px;
-left: 32px;
-top: 161px;
-color: ${({ theme }: ThemeObject) => theme?.textColorSecundary};
-font-family: 'Epilogue';
-font-style: normal;
-font-weight: 400;
-font-size: 18px;
-line-height: 27px;
+  position: absolute;
+  width: 325px;
+  height: 54px;
+  left: 32px;
+  top: 161px;
+  color: ${({ theme }: ThemeObject) => theme?.textColorSecundary};
+  font-family: 'Epilogue';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
 
-display: flex;
-align-items: center;
+  display: flex;
+  align-items: center;
 
-color: ${({ theme }: ThemeObject) => theme?.textColor};
+  color: ${({ theme }: ThemeObject) => theme?.textColor};
 
-opacity: 0.8;
+  opacity: 0.8;
 `

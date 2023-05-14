@@ -92,3 +92,54 @@ export const SubTitleLogin = styled.h3`
   margin-bottom: 16px;
   opacity: 0.8;
 `
+
+export const TitlePassword = styled.span`
+  width: 168px;
+  height: 20px;
+  margin: 10px 0 18px 0;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: ${({ theme }: ThemeObject) => theme?.textColorSecundary};
+  display: flex;
+  align-items: center;
+`
+
+export const LabelEmail = styled.label`
+  width: 31px;
+  height: 17px;
+
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: ${({ theme }: ThemeObject) => theme?.textColor};
+  display: flex;
+  opacity: 0.6;
+`
+
+export const LabelPassword = styled.label`
+  width: 65px;
+  height: 17px;
+
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: ${({ theme }: ThemeObject) => theme?.textColor};
+  display: flex;
+  opacity: 0.6;
+`
+
+export const ErrorMsg = styled.p`
+  max-width: 350px;
+  color: #f21e08;
+  padding: 2px 0;
+  margin-top: 2px;
+  font-size: 14px;
+  font-weight: 300;
+`

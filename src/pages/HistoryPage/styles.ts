@@ -1,12 +1,13 @@
 import styled from '@emotion/styled'
 import { ThemeObject } from '../../interfaces/theme'
 import { HiOutlineArrowLeft } from 'react-icons/hi'
+import { devices } from '../../utils'
+import { motion } from 'framer-motion'
 
-export const Historypage = styled.main`
+export const Historypage = styled(motion.main)`
   display: flex;
   padding: 22px;
   flex-direction: column;
-  items
   width: 100%;
   height: 100vh;
   overflow: hidden;
@@ -14,15 +15,15 @@ export const Historypage = styled.main`
 `
 
 export const IconLeft = styled(HiOutlineArrowLeft)`
-  with: 30px;
+  width: 30px;
   height: 30px;
   scale: 150%;
   margin: 14px 0;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   color: ${({ theme }: ThemeObject) => theme?.textColor};
 
   &:active {
-    scale: 130%
+    scale: 130%;
   }
 `
 
@@ -63,4 +64,8 @@ export const SubtitleHistory = styled.h4`
 export const ContainerCardsHistory = styled.div`
   overflow-y: auto;
   height: 550px;
+
+  @media only screen and ${devices.md} {
+    height: 600px;
+  }
 `

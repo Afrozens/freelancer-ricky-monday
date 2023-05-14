@@ -51,7 +51,7 @@ const LoginPage = () => {
   }
 
   return (
-    <Authpage>
+    <Authpage initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.3 }}>
       <TitleLogin>Welcome</TitleLogin>
       <SubTitleLogin>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </SubTitleLogin>
       <form onSubmit={handleSubmit(onSubmit)}>

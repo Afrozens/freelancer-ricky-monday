@@ -1,8 +1,9 @@
 import styled from '@emotion/styled'
 import { ThemeObject } from '../../interfaces/theme'
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
 
-export const Authpage = styled.section`
+export const Authpage = styled(motion.section)`
   display: flex;
   flex-direction: column;
   padding: 22px;

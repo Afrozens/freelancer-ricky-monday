@@ -4,20 +4,25 @@ import { NavLink } from 'react-router-dom'
 import { RiHomeFill } from 'react-icons/ri'
 import { RxExit } from 'react-icons/rx'
 import { HiClock } from 'react-icons/hi'
+import { devices } from '../../utils'
 
 export const Header = styled.header`
   display: flex;
+  position: fixed;
   justify-content: center;
   padding: 13px;
   width: 347px;
   height: 85px;
   border-radius: 24px;
-  position: absolute;
   top: 84%;
   left: 50%;
   transform: translate(-50%, 50%);
   z-index: 99;
   background-color: ${({ theme }: ThemeObject) => theme?.backgroundInputs};
+
+  @media only screen and ${devices.md} {
+    width: 450px;
+  }
 `
 
 export const NavBar = styled.nav`

@@ -3,9 +3,7 @@ import { DbData } from '../interfaces'
 import { db } from './firebase'
 
 export const sendData = async (data: DbData) => {
-  await setDoc(doc(db, data.uid, data.name), data, { merge: true }).then((data) =>
-    console.log('finish', data),
-  )
+  await setDoc(doc(db, data.uid, data.name), data, { merge: true })
 }
 
 export const getData = async (uid: string) => {
@@ -14,6 +12,5 @@ export const getData = async (uid: string) => {
   docData.forEach((doc) => {
     arr.push(doc.data())
   })
-  console.log(arr)
   return arr
 }

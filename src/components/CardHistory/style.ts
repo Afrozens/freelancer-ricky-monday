@@ -2,8 +2,10 @@ import styled from '@emotion/styled'
 import { ThemeObject } from '../../interfaces/theme'
 import { BsHeartFill } from 'react-icons/bs'
 import { RxCross2 } from 'react-icons/rx'
+import { devices } from '../../utils'
+import { motion } from 'framer-motion'
 
-export const ContainerHistory = styled.div`
+export const ContainerHistory = styled(motion.div)`
   position: relative;
   width: 326px;
   height: 77px;
@@ -11,6 +13,11 @@ export const ContainerHistory = styled.div`
   margin: 16px 0;
   background-color: ${({ theme }: ThemeObject) => theme?.backgroundInputs};
   border-radius: 12px;
+
+  @media only screen and ${devices.md} {
+    width: 100%;
+    height: 90px;
+  }
 `
 
 export const CardTitleHistory = styled.h5`
@@ -36,6 +43,11 @@ export const CardPreviewCard = styled.img`
   object-position: center;
   background: rgba(0, 0, 0, 0.51);
   border-radius: 12px;
+
+  @media only screen and ${devices.md} {
+    width: 600px;
+    height: 90px;
+  }
 `
 
 export const CardHeartIcon = styled(BsHeartFill)`
@@ -51,7 +63,7 @@ export const CardCrossIcon = styled(RxCross2)`
   align-self: center;
   width: 36px;
   height: 36px;
-  color: #D36060;
+  color: #d36060;
   z-index: 40;
   margin-right: 16px;
 `

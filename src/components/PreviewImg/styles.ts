@@ -1,10 +1,9 @@
 import styled from '@emotion/styled'
+import { motion } from 'framer-motion'
 
-export const PreviewContainer = styled.div`
+export const PreviewContainer = styled(motion.div)`
   width: 100%;
-  position: absolute;
-  top: 0px;
-  left: 0px;
+  position: relative;
   height: 564px;
   z-index: 0;
   border: 0;
@@ -13,6 +12,7 @@ export const PreviewContainer = styled.div`
 
 export const Previewimg = styled.img`
   border: 0;
+  width: 100%;
   border-radius: 0px 0px 32px 32px;
   object-fit: cover;
 `
@@ -40,7 +40,6 @@ export const PreviewShadow = styled.div`
   height: 100px;
   left: 0px;
   top: 464px;
-
   background: linear-gradient(360deg, #000000 0%, #000000 58.85%, rgba(0, 0, 0, 0) 100%);
   border-radius: 0px 0px 32px 32px;
 `

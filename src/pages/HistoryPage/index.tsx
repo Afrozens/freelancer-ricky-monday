@@ -27,7 +27,11 @@ const HistoryPage = () => {
 
   console.log([historyData])
   return (
-    <Historypage>
+    <Historypage
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.3 }}
+    >
       <Link to='/'>
         <IconLeft />
       </Link>

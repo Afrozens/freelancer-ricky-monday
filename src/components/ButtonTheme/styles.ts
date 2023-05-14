@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import { ThemeObject } from '../../interfaces/theme'
+import { devices } from '../../utils'
 
 export const Buttontheme = styled.button`
   position: absolute;
@@ -19,5 +20,10 @@ export const Buttontheme = styled.button`
 
   &:active {
     scale: 90%
+  }
+
+  @media only screen and ${devices.md} {
+    width: 72px;
+    height: 72px;
   }
 `

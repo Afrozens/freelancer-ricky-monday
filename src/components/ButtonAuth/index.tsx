@@ -1,3 +1,4 @@
+import { useAuth } from '../../contexts/AuthContext'
 import { Buttonauth } from './styles'
 import { ReactNode } from 'react'
 
@@ -6,7 +7,12 @@ type PropsAuth = {
 }
 
 const ButtonAuth = ({ children }: PropsAuth) => {
-  return <Buttonauth>{children}</Buttonauth>
+  const { loadingGetUser } = useAuth()
+  return (
+    <Buttonauth type='submit' disabled={loadingGetUser}>
+      {children}
+    </Buttonauth>
+  )
 }
 
 export default ButtonAuth

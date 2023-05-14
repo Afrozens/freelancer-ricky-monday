@@ -14,18 +14,41 @@ import {
   ErrorMsg,
 } from './styles'
 import { useForm } from 'react-hook-form'
+import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
+import { useAuth } from '../../contexts/AuthContext'
 
 const LoginPage = () => {
+  const navigate = useNavigate()
+  const { user } = useAuth()
+
+  useEffect(() => {
+    if (user) {
+      navigate('/')
+    }
+  }, [navigate, user])
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<DataAuth>()
 
-  const onSubmit = (data: DataAuth) => {
-    signIn(data)
-    
+  const onSubmit = async (data: DataAuth) => {
+    try {
+      await signIn(data)
+      navigate('/')
+    } catch (error: unknown) {
+      let errorMessage = 'error.unknown'
+      if (typeof error === 'string') {
+        errorMessage = error.toUpperCase()
+      } else if (error instanceof Error) {
+        errorMessage = error.message
+      }
+      console.log(errorMessage)
+    }
   }
+
   return (
     <Loginpage>
       <TitleLogin>Welcome</TitleLogin>

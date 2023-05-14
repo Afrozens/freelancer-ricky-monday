@@ -19,4 +19,8 @@ export const Buttonauth = styled.button`
   &:active {
     scale: 90%
   }
+
+  &:disabled {
+    background: #777777;
+  }
 `

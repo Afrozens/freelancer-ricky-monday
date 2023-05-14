@@ -10,8 +10,8 @@ const HomePage = () => {
         <CrossIcon />
       </Buttoncross>
       <Buttonlike>
-      <img src='/icons/like.svg' alt='like' />
-    </Buttonlike>
+        <img src='/icons/like.svg' alt='like' />
+      </Buttonlike>
     </Homepage>
   )
 }

@@ -19,6 +19,7 @@ export interface UserContextState {
 export interface AuthContextModel {
   logout: (auth: Auth) => Promise<void>
   user: User | null
+  loadingGetUser: boolean
 }
 
 export interface SignsAuth {

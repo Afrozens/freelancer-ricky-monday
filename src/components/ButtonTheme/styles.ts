@@ -11,8 +11,13 @@ export const Buttontheme = styled.button`
   left: 21px;
   top: 22px;
   border: 0;
+  transition: all .3s ease-in-out;
   z-index: 3;
   font-size: 24px;
   background-color: ${({theme}: ThemeObject) => theme?.background};
   border-radius: 18px;
+
+  &:active {
+    scale: 90%
+  }
 `

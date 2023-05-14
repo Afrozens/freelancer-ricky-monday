@@ -1,5 +1,5 @@
 import { ButtonTheme, PreviewImg } from '../../components'
-import { Buttoncross, Buttonlike, Homepage } from './styles'
+import { Buttoncross, Buttonlike, CrossIcon, Homepage } from './styles'
 
 const HomePage = () => {
   return (
@@ -7,7 +7,7 @@ const HomePage = () => {
       <ButtonTheme />
       <PreviewImg />
       <Buttoncross>
-        <img src='/icons/cross.svg' alt='cross' />
+        <CrossIcon />
       </Buttoncross>
       <Buttonlike>
       <img src='/icons/like.svg' alt='like' />

@@ -8,7 +8,9 @@ export interface Theme {
     backgroundInputs: string
     textColor: string
     textColorSecundary: string
-    colorHearth: string
+    colorHearth: string,
+    colorIconHome: string,
+    colorIconCross: string
 }
 
 export interface ThemeObject {

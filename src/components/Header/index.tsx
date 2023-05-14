@@ -1,20 +1,20 @@
 import { Outlet } from 'react-router-dom'
-import { NavLink, Header, NavBar } from './styles'
+import { Link, Header, NavBar, HomeIcon, ExitIcon, HistoryIcon } from './styles'
 
 const HeaderComponent = () => {
   return (
     <>
       <Header>
         <NavBar>
-          <NavLink to={'/'}>
-            <img src='/icons/home.svg' alt='home' />
-          </NavLink>
-          <NavLink to={'/history'}>
-            <img src='/icons/history.svg' alt='home' />
-          </NavLink>
-          <NavLink to={'/login'}>
-            <img src='/icons/leave.svg' alt='home' />
-          </NavLink>
+          <Link to={'/'}>
+            <HomeIcon />
+          </Link>
+          <Link to={'/history'}>
+            <HistoryIcon />
+          </Link>
+          <Link to={'/login'}>
+            <ExitIcon />
+          </Link>
         </NavBar>
       </Header>
       <Outlet />

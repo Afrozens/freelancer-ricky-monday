@@ -3,23 +3,30 @@ import { ThemeObject } from '../../interfaces/theme'
 
 export const Loginpage = styled.section`
   display: flex;
+  flex-direction: column;
   padding: 22px;
   flex-direccion: column;
   width: 100%;
   height: 100vh;
+  justify-content: center;
   overflow: hidden;
   background-color: ${({ theme }: ThemeObject) => theme?.background};
+`
+
+export const ContainerInputs = styled.div`
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 16px;
 `
 
 export const InputEmail = styled.input`
   box-sizing: border-box;
   padding-left: 10px;
   outline: none;
-  position: absolute;
   width: 330px;
   height: 67px;
-  left: 30px;
-  top: 337px;
   color: ${({ theme }: ThemeObject) => theme?.textColor};
   background: ${({ theme }: ThemeObject) => theme?.backgroundInputs};
   border: 1px solid rgba(255, 255, 255, 0.06);
@@ -40,11 +47,8 @@ export const InputPass = styled.input`
   box-sizing: border-box;
   padding-left: 10px;
   outline: none;
-  position: absolute;
   width: 330px;
   height: 67px;
-  left: 30px;
-  top: 414px;
   color: ${({ theme }: ThemeObject) => theme?.textColor};
   background: ${({ theme }: ThemeObject) => theme?.backgroundInputs};
   border: 1px solid rgba(255, 255, 255, 0.06);
@@ -63,12 +67,6 @@ export const InputPass = styled.input`
 `
 
 export const TitleLogin = styled.h1`
-  position: absolute;
-  width: 192px;
-  height: 51px;
-  left: 99px;
-  top: 202px;
-
   font-family: 'DM Sans';
   font-style: normal;
   font-weight: 700;
@@ -76,27 +74,21 @@ export const TitleLogin = styled.h1`
   line-height: 51px;
   color: ${({ theme }: ThemeObject) => theme?.textColor};
   display: flex;
-  align-items: center;
+  justify-content: center;
   text-align: center;
 `
 
 export const SubTitleLogin = styled.h3`
-  position: absolute;
-  width: 322px;
-  height: 54px;
-  left: 34px;
-  top: 260px;
   font-family: 'Epilogue';
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 27px;
-
+  width: 322px;
   display: flex;
-  align-items: center;
   text-align: center;
-
+  margin: 0 auto;
   color: ${({ theme }: ThemeObject) => theme?.textColorSecundary};
-
+  margin-bottom: 16px;
   opacity: 0.8;
 `

@@ -2,12 +2,11 @@ import { createBrowserRouter } from 'react-router-dom'
 import { Header } from '../components'
 import { Error404, HistoryPage, HomePage, LoginPage } from '../pages'
 
+
 const router = createBrowserRouter([
   {
     path: '/',
-    element: (
-        <Header />
-    ),
+    element: (<Header />),
     errorElement: <Error404 />,
     children: [
       {

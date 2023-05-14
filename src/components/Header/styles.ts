@@ -1,6 +1,9 @@
 import styled from '@emotion/styled'
 import { ThemeObject } from '../../interfaces/theme'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+import { RiHomeFill } from 'react-icons/ri'
+import { RxExit } from 'react-icons/rx'
+import { HiClock } from 'react-icons/hi'
 
 export const Header = styled.header`
   display: flex;
@@ -24,16 +27,51 @@ export const NavBar = styled.nav`
   justify-content: space-between;
 `
 
-export const NavLink = styled(Link)`
+export const Link = styled(NavLink)`
   width: 59px;
   height: 59px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 0;
-  border-radius: 16px;
-  padding: 20px;
-  fill: ${({ theme }: ThemeObject) => theme?.textColor};
+  border-radius: 15px;
+  padding: 15px;
   background-color: transparent;
 
-  :focus {
+  &.active {
     background-color: ${({ theme }: ThemeObject) => theme?.background};
+  }
+
+  &.active svg {
+    color: ${({ theme }: ThemeObject) => theme?.colorIconHome};
+  }
+`
+
+export const HomeIcon = styled(RiHomeFill)`
+  width: 24px;
+  height: 24px;
+  color: #777777;
+
+  &.active {
+    color: ${({ theme }: ThemeObject) => theme?.colorIconHome};
+  }
+`
+export const HistoryIcon = styled(HiClock)`
+  width: 24px;
+  height: 24px;
+  color: #777777;
+
+  &.active {
+    color: ${({ theme }: ThemeObject) => theme?.colorIconHome};
+  }
+`
+
+export const ExitIcon = styled(RxExit)`
+  width: 24px;
+  height: 24px;
+  color: #777777;
+
+  &.active {
+    color: ${({ theme }: ThemeObject) => theme?.colorIconHome};
   }
 `

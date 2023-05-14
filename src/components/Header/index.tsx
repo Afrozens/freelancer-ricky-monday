@@ -3,9 +3,10 @@ import { Link, Header, NavBar, HomeIcon, ExitIcon, HistoryIcon } from './styles'
 import { useAuth } from '../../contexts/AuthContext'
 import { auth } from '../../services/firebase'
 import { useEffect } from 'react'
+import Spinner from '../Spinner'
 
 const HeaderComponent = () => {
-  const { user, logout } = useAuth()
+  const { user, logout, loadingGetUser} = useAuth()
   const navigate = useNavigate()
   useEffect(() => {
     if (!user) {
@@ -15,6 +16,7 @@ const HeaderComponent = () => {
 
   return (
     <>
+    {loadingGetUser && <Spinner />}
       {!user ? (
         <>
           <Outlet />

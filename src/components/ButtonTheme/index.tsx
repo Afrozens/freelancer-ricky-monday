@@ -1,10 +1,8 @@
-import ThemesContext from '../../contexts/ThemesContext'
-import { ThemeContext } from '../../interfaces'
+import { useTheme } from '../../contexts/ThemesContext'
 import { Buttontheme } from './styles'
-import { useContext } from 'react'
 
 const ButtonTheme = () => {
-  const { isToggle, handleToggle } = useContext<ThemeContext>(ThemesContext)
+  const { isToggle, handleToggle } = useTheme()
   return <Buttontheme onClick={handleToggle}>{isToggle ? '🌙'  : '🌤️'}</Buttontheme>
 }
 

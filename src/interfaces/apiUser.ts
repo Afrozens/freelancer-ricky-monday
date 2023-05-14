@@ -1,31 +1,33 @@
-interface UserAssociatedUrl {
-    name: string;
-    url: string;
-  }
-  
-  export interface ApiUser {
-    id: number;
-    name: string;
-    status: string;
-    species: string;
-    type: string;
-    gender: string;
-    origin: UserAssociatedUrl;
-    location: UserAssociatedUrl;
-    image: string;
-    episode: string[];
-    url: string;
-    created: string;
-  }
-  
-  export interface User {
-    id: number;
-    name: string;
-    image: string;
-  }
-  
-  export const UserEmptyState: User = {
-    id: 0,
-    name: '',
-    image: ''
-  };
+import { Dispatch } from 'react'
+
+interface SerieAssociatedUrl {
+  name: string
+  url: string
+}
+
+export interface ApiSerie {
+  id: number
+  name: string
+  status: string
+  species: string
+  type: string
+  gender: string
+  origin: SerieAssociatedUrl
+  location: SerieAssociatedUrl
+  image: string
+  episode: string[]
+  url: string
+  created: string
+}
+
+export interface Serie {
+  id: number
+  name: string
+  image: string
+}
+
+export interface SerieData {
+  dataApi: Serie
+  figure: number
+  setFigure: Dispatch<React.SetStateAction<number>>
+}

@@ -1,10 +1,13 @@
+import { Serie } from '../../interfaces'
 import { PreviewContainer, PreviewShadow, PreviewTitle, Previewimg } from './styles'
 
-const PreviewImg = () => {
+type PropsPreview = Pick<Serie, 'image' | 'name'>
+
+const PreviewImg = ({ name, image }: PropsPreview) => {
   return (
     <PreviewContainer>
-      <Previewimg src='/preview.jpg' alt='preview image car' />
-      <PreviewTitle>Formula 1</PreviewTitle>
+      <Previewimg src={image} alt={`preview image ${name}`} />
+      <PreviewTitle>{name}</PreviewTitle>
       <PreviewShadow />
     </PreviewContainer>
   )

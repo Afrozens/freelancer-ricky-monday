@@ -25,7 +25,6 @@ const HistoryPage = () => {
     }
   }, [user])
 
-  console.log([historyData])
   return (
     <Historypage
       initial={{ opacity: 0 }}
